@@ -1,24 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Link } from 'expo-router';
-import paymentDetails from './paymentDetails';
+import { StatusBar } from "expo-status-bar";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Link } from "expo-router";
+import paymentDetails from "./paymentDetails";
+import { SafeAreaView } from "react-native-safe-area-context";
+
+import { images } from "../constants";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>fetch all the hotel data</Text>
-      <StatusBar style="auto" />
-      <Link href="/home" style={{color: 'blue'}} >go to home</Link>
-      <Link href="/guest" style={{color: "red"}}>add more guest</Link>
-    </View>
+    <SafeAreaView className='h-full'>
+      <ScrollView contentContainerStyle={{ height: "100%" }}>
+        <View className="w-full justify-center items-center px-4">
+          <Image source={images.logo}
+          className='w-[230px] h-[84px]'
+          resizeMode="contain"
+          />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

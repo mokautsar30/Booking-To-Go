@@ -4,7 +4,7 @@ import React from 'react'
 const Homepage = () => {
   return (
     <View style={styles.container}>
-      <Text>Homepage</Text>
+      <Text>fetch all the hotel data</Text>
     </View>
   )
 }

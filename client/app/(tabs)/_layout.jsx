@@ -1,19 +1,31 @@
 import { StyleSheet, Text, View } from "react-native";
 import { Tabs } from "expo-router";
-import { Ionicons, FontAwesome, Feather } from "@expo/vector-icons";
+import { Ionicons, FontAwesome, Feather, AntDesign } from "@expo/vector-icons";
 
 const TabsLayout = () => {
   return (
     <>
-      <Tabs screenOptions={{tabBarLabelStyle: {fontWeight: 'bold'}}}>
+      <Tabs
+        screenOptions={{
+          tabBarActiveTintColor: "#FFF",
+          tabBarInactiveTintColor: "#CDCDE0",
+          tabBarStyle: styles.tabBar,
+          tabBarLabelStyle: { fontWeight: "bold", fontSize: 11 },
+        }}
+      >
         <Tabs.Screen
           name="home"
           options={{
             title: "Explore",
-            color: "black",
             headerShown: false,
-            tabBarIcon: ({ color }) => (
-              <Ionicons name="home" size={24} color={color.black} />
+            tabBarIcon: ({ color, focused }) => (
+              <Feather
+                name="home"
+                size={25}
+                color={color}
+                focused={focused}
+                style={{ marginTop: 10 }}
+              />
             ),
           }}
         />
@@ -21,10 +33,15 @@ const TabsLayout = () => {
           name="orderHistory"
           options={{
             title: "Order List",
-            color: "black",
             headerShown: false,
-            tabBarIcon: ({ color }) => (
-              <Feather name="list" size={24} color={color.black} />
+            tabBarIcon: ({ color, focused }) => (
+              <Feather
+                name="list"
+                size={25}
+                color={color}
+                focused={focused}
+                style={{ marginTop: 10 }}
+              />
             ),
           }}
         />
@@ -32,10 +49,15 @@ const TabsLayout = () => {
           name="profile"
           options={{
             title: "Profile",
-            color: "black",
             headerShown: false,
-            tabBarIcon: ({ color }) => (
-              <FontAwesome name="user" size={24} color={color.black} />
+            tabBarIcon: ({ color, focused }) => (
+              <AntDesign
+                name="user"
+                size={25}
+                color={color}
+                focused={focused}
+                style={{ marginTop: 10 }}
+              />
             ),
           }}
         />
@@ -46,4 +68,10 @@ const TabsLayout = () => {
 
 export default TabsLayout;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  tabBar: {
+    backgroundColor: "#1875A4",
+    borderRadius: 25,
+    position: "absolute",
+  },
+});
