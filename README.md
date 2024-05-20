@@ -1,1 +1,1 @@
-# Booking-to-go
+# Booking-to-go Mockup with React Native
