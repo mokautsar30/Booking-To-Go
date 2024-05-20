@@ -182,6 +182,7 @@ const BookingDetailScreen = () => {
           <Text
             style={{
               fontSize: 16,
+              fontWeight: "bold",
             }}
           >
             {formatDate(data.chosen_hotel_params.check_in)}
@@ -199,6 +200,7 @@ const BookingDetailScreen = () => {
           <Text
             style={{
               fontSize: 16,
+              fontWeight: "bold",
             }}
           >
             {formatDate(data.chosen_hotel_params.check_out)}
@@ -282,7 +284,7 @@ const BookingDetailScreen = () => {
             padding: 20,
           }}
         >
-         <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 10, }}>
+          <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 10 }}>
             Data tamu
           </Text>
           {guests.map((guest, index) => (
@@ -291,20 +293,19 @@ const BookingDetailScreen = () => {
               <Text style={styles.guestDetailText}> {guest.name}</Text>
             </View>
           ))}
-          <TouchableOpacity onPress={() => navigation.navigate('guestScreen')}>
+          <TouchableOpacity onPress={() => navigation.navigate("guestScreen")}>
             <View
               style={{
                 marginTop: 10,
                 padding: 20,
                 flexDirection: "row",
-                justifyContent: 'flex-end',
+                justifyContent: "flex-end",
                 marginVertical: 10,
               }}
             >
               <AntDesign name="adduser" size={20} />
             </View>
           </TouchableOpacity>
-        
         </View>
       </View>
     </ScrollView>
@@ -375,5 +376,15 @@ const styles = StyleSheet.create({
     marginLeft: 2,
     marginRight: 5,
     opacity: 0.5,
+  },
+  guestDetailContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginVertical: 5,
+  },
+  guestDetailText: {
+    fontSize: 14,
+    marginRight: 10,
+    fontWeight: "bold",
   },
 });
